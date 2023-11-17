@@ -14,6 +14,7 @@ module.exports = {
         type: Sequelize.TEXT,
       },
       score: {
+        allowNull: false,
         type: Sequelize.TEXT,
       },
       createdAt: {
