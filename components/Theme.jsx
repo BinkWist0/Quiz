@@ -1,7 +1,7 @@
 const React = require("react");
 function Theme({ theme }) {
   return (
-    <div className="card text-bg-dark mb-3" style={{width: "18rem"}}>
+    <div className="card text-bg-dark mb-3" style={{width: "35rem"}}>
       <img src={theme.img} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{theme.name}</h5>

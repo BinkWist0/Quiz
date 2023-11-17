@@ -7,7 +7,7 @@ function QuestionsPage({ question, index, user }) {
       <div
         className="card text-bg-dark mb-3"
         data-id={question.themeId}
-        style={{ width: "18rem" }}
+        style={{ width: "50rem" }}
       >
         <img src={question.img} className="card-img-top" alt="..." />
         <div className="card-body">
