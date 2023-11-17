@@ -1,14 +1,13 @@
 /* eslint-disable import/order */
-const { raw } = require("express");
 const QuestionsPage = require("../../components/pages/QuestionsPage");
-const { Question, Theme } = require("../../db/models");
+const { Question } = require("../../db/models");
 
 const router = require("express").Router();
 
-router.get("/:index", async (req, res) => {
+router.get("/:index/themes/:themesId", async (req, res) => {
   try {
-    const { index, themesid } = req.params;
-    const questions = await Question.findAll({ where: { themeId: 3 } });
+    const { index, themesId } = req.params;
+    const questions = await Question.findAll({ where: { themeId: themesId } });
     if (questions[index]) {
       const html = res.renderComponent(QuestionsPage, {
         question: questions[index],
@@ -16,7 +15,7 @@ router.get("/:index", async (req, res) => {
       });
       res.send(html);
     } else {
-      res.redirect("/");
+      res.redirect("/themes");
     }
   } catch (error) {
     console.log(error.message);
