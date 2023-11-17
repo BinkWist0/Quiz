@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Question extends Model {
     /**
@@ -9,35 +7,38 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({Theme}) {
+    static associate({ Theme }) {
       this.belongsTo(Theme, { foreignKey: 'themeId' });
     }
   }
-  Question.init({
-    name: {
-      allowNull: false,
-      type: DataTypes.TEXT
-    },
-    img: {
-      allowNull: false,
-      type: DataTypes.TEXT
-    },
-    answer: {
-      allowNull: false,
-      type: DataTypes.TEXT
-    },
-    themeId: {
-      allowNull: false,
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Themes',
-        key: 'id',
+  Question.init(
+    {
+      name: {
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
-      onDelete: 'cascade',
+      img: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      answer: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      themeId: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Themes',
+          key: 'id',
+        },
+        onDelete: 'cascade',
+      },
     },
-  }, {
-    sequelize,
-    modelName: 'Question',
-  });
+    {
+      sequelize,
+      modelName: 'Question',
+    }
+  );
   return Question;
 };
