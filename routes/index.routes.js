@@ -1,7 +1,8 @@
-const router = require('express').Router()
-const questionsRouter = require("./views/questions.routes")
+const router = require("express").Router();
+const questionsRouter = require("./views/questions.routes");
 
-router.use("/questions", questionsRouter)
+router.use("/themes", questionsRouter);
+router.use("/questions", questionsRouter);
 
-
-module.exports = router
+// /themes/:themesId/questions/:questionId/
+module.exports = router;
