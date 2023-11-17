@@ -6,13 +6,13 @@ const morgan = require("morgan");
 const path = require("path");
 const ssr = require("./middlewares/ssr");
 
-// const serverConfig = require("./config/serverCofnig");
+const serverConfig = require("./config/serverCofnig");
 
 const indexRouter = require("./routes/index.routes");
 
 const app = express();
 
-// serverConfig(app);
+serverConfig(app);
 
 app.use(ssr);
 app.use(morgan("dev"));

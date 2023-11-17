@@ -13,6 +13,7 @@ module.exports = function Layout({ title, children, user }) {
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="/style/style.css" />
+        <script defer src="/js/script.js" />
       </head>
       <Navbar user={user} />
       <body>{children}</body>

@@ -46,5 +46,19 @@ input{
 }
 
 .btn-next{
-  margin-left: 150px;
+  margin-left: 400px;
+}
+.card{
+  margin-left:300px;
+}
+
+.form-answer {
+  margin-left:300px;
+}
+
+.answer{
+  color: #ffc107;
+  margin-left: 300px;
+  margin-bottom: 25px;
+  font-size: 20px;
 }
