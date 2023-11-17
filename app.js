@@ -8,7 +8,7 @@ const ssr = require("./middlewares/ssr");
 
 // const serverConfig = require("./config/serverCofnig");
 
-const indexRouter = require("./routes/index.route");
+const indexRouter = require("./routes/index.routes");
 
 const app = express();
 
