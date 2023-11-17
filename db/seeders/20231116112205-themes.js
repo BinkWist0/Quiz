@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 "use strict";
 
 /** @type {import('sequelize-cli').Migration} */
@@ -26,6 +27,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Themes', null, {});
+    await queryInterface.bulkDelete("Themes", null, {});
   },
 };
