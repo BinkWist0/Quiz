@@ -15,9 +15,9 @@ router.post('/registration', async (req, res) => {
   try {
     const { name } = req.body;
     if (name) {
-      await User.create({ name, score: 0 });
-      res.app.locals.user = name;
-      res.redirect('/');
+      const user = await User.create({ name, score: 0 });
+      res.app.locals.user = user;
+      res.redirect('/themes');
     } else {
       res.status(400).send('заполните все поля');
     }

@@ -1,23 +1,21 @@
 const React = require("react");
 const Navbar = require("./Navbar");
 
-module.exports = function Layout({ title, children }) {
+module.exports = function Layout({ title, children, user }) {
   return (
     <html lang="en">
       <head>
         <title>{title}</title>
-        {/* <link
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        /> */}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        {/* <link rel="stylesheet" href="/style/auth.css" />
-        <link rel="stylesheet" href="/style/product.css" />
-        <link rel="stylesheet" href="/style/nav.css" /> */}
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossOrigin="anonymous"
+        />
         <link rel="stylesheet" href="/style/style.css" />
-        {/* <script src="/js/script.js" />  */}
+        <script defer src="/js/script.js" />
       </head>
-      <Navbar />
+      <Navbar user={user} />
       <body>{children}</body>
     </html>
   );
